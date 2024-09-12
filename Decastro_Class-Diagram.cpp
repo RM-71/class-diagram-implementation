@@ -133,17 +133,17 @@ int main() {
 	
     while (Condition) {
     	cout << "=========================";
-        cout << "\n|\t---Menu---\t" << endl;
-        cout << "|   [1]-View Products" << endl;
-        cout << "|   [2]-View Cart" << endl;
-        cout << "|   [3]-View Orders" << endl;
-        cout << "|   [4]-Exit" << endl;
-        cout << "|Input Choice: ";
+        cout << "\n\t---Menu---\t" << endl;
+        cout << "[1]-View Products" << endl;
+        cout << "[2]-View Cart" << endl;
+        cout << "[3]-View Orders" << endl;
+        cout << "[4]-Exit" << endl;
+        cout << "Input Choice: ";
         
         while (!(cin >> choice)|| choice < 1){
             cin.clear();
             cin.ignore();
-            cout << "|Please Enter Positive Number: ";
+            cout << "Please Enter Positive Number: ";
 		} cin.ignore();
         cout << "=========================" << endl; 
         system ("pause");
