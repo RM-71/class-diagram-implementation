@@ -124,7 +124,7 @@ int main() {
     int choice;
 	bool Condition = true;
 	Products productList[5] = {
-		Products(20000, "Laptop", "AB0"),
+	Products(20000, "Laptop", "AB0"),
         Products(10000, "Table", "PS1"),
         Products(5000, "Chair", "DG2"),
         Products(400, "Mirror", "NS3"),
@@ -243,6 +243,5 @@ int main() {
             cout << "Invalid choice. Please try again." << endl;
         }
     }
-
     return 0;
 }
