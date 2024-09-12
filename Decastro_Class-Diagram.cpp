@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 
@@ -53,15 +52,15 @@ class ShoppingCart {
             	cout << "No product has been place" << endl;
         	} 
 			else {
-            cout << "\n ID\tName\tQuantity\tPrice" << endl;
-            cout << "-------------------------------------------" << endl;
+            cout << "\n ID\tName\tQuantity\tPrice\tTotal Price" << endl;
+            cout << "-----------------------------------------------------" << endl;
             for (int i = 0; i < itemCount; i++) {
                 cout << cartItems[i].getProductID() << "\t "
                      << cartItems[i].getProductName() << "\t "
                      << quantities[i] << "\t\t "
-                     << total[i] << endl;
+                     << cartItems[i].getProductPrice() << "\t" << total[i] << endl;
             }
-            cout << "-------------------------------------------" << endl;
+            cout << "-----------------------------------------------------" << endl;
             cout << "Total Amount: " << totalamount << endl << endl;
         }
     }
@@ -180,11 +179,15 @@ int main() {
             			cout << "ID Cannot be found: Invalid ID" << endl;
 					}
 				}
-
-                cout << "Do you want to add another product? (Y/N): ";
-                cin >> addMore;
-                cin.ignore();  // Clear the newline character
-
+				do{
+                	cout << "Do you want to add another product? (Y/N): ";
+                	cin >> addMore;
+                	cin.ignore();  
+                	if (!(tolower(addMore) == 'y' || tolower(addMore) == 'n')){
+                		cout << "Error: Choose Y or N" << endl;
+					}
+            	}while (!(tolower(addMore) == 'y' || tolower(addMore) == 'n'));
+				
             } while (tolower(addMore) == 'y');
             system ("cls");
         break;
