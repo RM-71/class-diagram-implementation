@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 
@@ -161,7 +162,8 @@ int main() {
                 while(!productFound){
                 	cout << "Enter the Product ID to add to cart: ";
                 	getline(cin, productID); 
-					for (int i = 0; i < 5; i++) {
+			transform(productID.begin(), productID.end(), productID.begin(), ::toupper);
+			for (int i = 0; i < 5; i++) {
                    		if (productList[i].getProductID() == productID) {
                    			cout << "Enter the Quantity: ";
                 			while (!(cin >> quantity)|| quantity < 1){
