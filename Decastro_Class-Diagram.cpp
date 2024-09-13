@@ -50,7 +50,7 @@ class ShoppingCart {
     
     	void viewCart() {
         	if (itemCount == 0) {
-            	cout << "No product has been place" << endl;
+            	cout << "No product has been place" << endl << endl;
         	} 
 			else {
             cout << "\n ID\tName\tQuantity\tPrice\tTotal Price" << endl;
@@ -197,6 +197,9 @@ int main() {
         case 2: {
             cart.viewCart();
             char checkout;
+		if (cart.itemCount == 0){
+            	break;	
+		}
             do{
             	if (cart.itemCount != 0) {
                 	cout << "Do you want to checkout? (Y/N): ";
